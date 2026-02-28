@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F0F0E8;
+  --color-foreground: #000000;
+  
+  /* Brutalist vibrant colors */
+  --color-brutal-yellow: #FFCC33;
+  --color-brutal-purple: #C3B1E1;
+  --color-brutal-salmon: #FF9B9B;
+  --color-brutal-green: #B5EAD7;
+  
+  --color-primary: #FFCC33;
+  --color-primary-foreground: #000000;
+  --color-muted: #E2E2D8;
+  --color-muted-foreground: #4A4A4A;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Syne", "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* We'll use custom shadows so don't need animate-fade-in mostly */
+  --animate-fade-in: fade-in 0.5s ease-out;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Brutalist base requires sharp borders and no smooth scrolling */
+  }
+
+  /* Force heading font application */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  .brutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+  .brutal-shadow-hover {
+    box-shadow: 0px 0px 0px 0px #000000;
+    transform: translate(4px, 4px);
+  }
+  .brutal-border {
+    border: 3px solid #000000;
+  }
+}
