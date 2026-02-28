@@ -1,4 +1,25 @@
-export const CONFIG = {
+export interface SiteConfig {
+  name: string;
+  title: string;
+  description: string;
+  socials: {
+    github: string;
+    linkedin: string;
+    email: string;
+    twitter?: string;
+  };
+  skills: string[];
+  projects: {
+    id: string;
+    title: string;
+    description: string;
+    tags: string[];
+    githubUrl?: string;
+    liveUrl?: string;
+  }[];
+}
+
+export const CONFIG: SiteConfig = {
   name: "Damián Sepúlveda",
   title: "Full Stack Developer",
   description:
